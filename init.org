@@ -9,6 +9,7 @@
 ** TODO Relative line numbers
 ** TODO Magit
 ** TODO Powerline
+** TODO Central org files location (dropbox?)
    
 * What I want to learn
 
