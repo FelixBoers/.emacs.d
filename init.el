@@ -63,6 +63,17 @@
 (prefer-coding-system 'utf-8)
 (set-frame-font "Consolas 12")
 
+;; Shell
+(if (equal system-type "windows-nt")
+  (setq explicit-shell-file-name "C:/Program Files/Git/bin/bash.exe")
+  (setq shell-file-name "C:/Program Files/Git/bin/bash.exe")
+  (setq explicit-bash.exe-args '("--noediting" "--login" "-i"))
+  (add-to-list 'exec-path "C:/Program Files/Git/bin")
+  (setenv "SHELL" shell-file-name)
+  (add-hook 'comint-output-filter-functions 'comint-strip-ctrl-m))
+  (unless (package-installed-p 'powershell)
+    (package-install 'powershell))
+
 ;; Theme
 (unless (package-installed-p 'zenburn-theme)
   (package-install 'zenburn-theme))
@@ -159,8 +170,19 @@
 (unless (package-installed-p 'ace-jump-mode)
   (package-install 'ace-jump-mode))
 
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(org-agenda-files (quote ("~/.emacs.d/init.org"))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
 
 (provide 'init)
 
 ;;; init.el ends here
-
