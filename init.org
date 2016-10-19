@@ -1,0 +1,18 @@
+* What's missing
+
+** TODO Vim scroll down jump to middle of screen
+** TODO IIS Express start/stop
+** TODO Compile project (msbuild)
+** TODO Collapse region/class/method/comment
+** TODO Powershell as default shell 
+** TODO Yasnippets
+** TODO Relative line numbers
+** TODO Magit
+** TODO Powerline
+   
+* What I want to learn
+
+** Buffer handling
+** Presentation via orgmode
+** Better package management (with custom lisp files)
+
