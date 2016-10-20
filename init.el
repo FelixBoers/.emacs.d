@@ -81,6 +81,17 @@
 
 ;; Packages
 
+;;; Smooth Scrolling
+(unless (package-installed-p 'smooth-scrolling)
+  (package-install 'smooth-scrolling))
+(smooth-scrolling-mode)
+(setq smooth-scroll-margin 5)
+
+;;; Relative line numbers
+(unless (package-installed-p 'relative-line-numbers)
+  (package-install 'relative-line-numbers))
+(global-relative-line-numbers-mode)
+
 ;;; Org
 (require 'org)
 (setq org-hide-leading-stars t)

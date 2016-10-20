@@ -1,12 +1,14 @@
 * What's missing
 
-** TODO Vim scroll down jump to middle of screen
+** DONE Vim scroll down jump to middle of screen
+   CLOSED: [2016-10-20 Do 12:24]
 ** TODO IIS Express start/stop
 ** TODO Compile project (msbuild)
 ** TODO Collapse region/class/method/comment
 ** TODO Powershell as default shell 
 ** TODO Yasnippets
-** TODO Relative line numbers
+** DONE Relative line numbers
+   CLOSED: [2016-10-20 Do 12:24]
 ** TODO Magit
 ** TODO Powerline
 ** TODO Central org files location (dropbox?)
@@ -16,4 +18,4 @@
 ** Buffer handling
 ** Presentation via orgmode
 ** Better package management (with custom lisp files)
-
+   
