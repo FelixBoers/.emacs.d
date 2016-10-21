@@ -17,20 +17,21 @@
   (package-refresh-contents))
 
 (defvar my-packages '(
-    zenburn-theme
+    zenburn-theme		; one of the best low contract color themes
 
-    diminish ; don't clutter the modeline with minor mode names
-    smooth-scrolling ; avoids jumping to to middle of the page
-    helm
-    helm-projectile
-    evil
-    evil-leader
-    omnisharp
-    flycheck
-    company
-    projectile
-    yasnippet
-    ace-jump-mode
+    diminish			; don't clutter the modeline with minor mode names
+    smooth-scrolling	; avoids jumping to to middle of the page
+    helm				; incremental completion and selection narrowing framework
+    helm-projectile		; helm ui for projectile
+    evil				; evil is an (e)xtensive (v)(i) (l)ayer for emacs	.	It provides Vim features.
+    evil-leader			; port of vim's mapleader
+	org-evil			; evil extension for org mode
+    omnisharp			; Troll coworkers - use Emacs at work for csharp
+    flycheck			; On the fly syntax checking 
+    company				; Modular in-buffer bompletion framework 
+    projectile			; Project Integration Library
+    yasnippet			; A template system 
+    ace-jump-mode		; Enables fast/direct cursor movement in current view
   ))
 
 (dolist (p my-packages)

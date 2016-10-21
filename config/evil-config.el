@@ -6,4 +6,6 @@
 (require 'evil-leader)
 (global-evil-leader-mode)
 
+(require 'org-evil)
+
 (provide 'evil-config)
