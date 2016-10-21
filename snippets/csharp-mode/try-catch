@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: try..catch
+# key: try
+# --
+try
+{
+	$0
+}
+catch (${1:Exception} ${2:ex})
+{
+	${3:_trace.WriteData(TraceEventType.Error, 0, $2);}
+	throw;	
+}
