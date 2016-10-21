@@ -7,6 +7,10 @@
 (setq tab-width 4)
 (setq-default tab-width 4)
 
+;; Scrolling
+(smooth-scrolling-mode)
+(setq smooth-scroll-margin 5)
+
 ;; Backup control
 (setq backup-directory-alist `((".*" .,temporary-file-directory)))
 (setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))

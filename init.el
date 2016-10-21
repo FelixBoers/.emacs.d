@@ -57,7 +57,13 @@
   (eval-after-load "company"
     '(diminish 'company-mode))
   (eval-after-load "yasnippet"
-    '(diminish 'yas-minor-mode)))
+    '(diminish 'yas-minor-mode))
+  (eval-after-load "helm"
+    '(diminish 'helm-mode))
+  (eval-after-load "projectile"
+    '(diminish 'projectile-mode))
+  (eval-after-load "undo-tree"
+    '(diminish 'undo-tree-mode)))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
