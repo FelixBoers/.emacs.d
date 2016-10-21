@@ -32,6 +32,8 @@
     projectile			; Project Integration Library
     yasnippet			; A template system 
     ace-jump-mode		; Enables fast/direct cursor movement in current view
+	popwin				; Popup window manager
+	neotree				; a emacs plugin like NerdTree for Vim
   ))
 
 (dolist (p my-packages)
@@ -43,13 +45,17 @@
 (require 'basic-config)
 (require 'ui-config)
 (require 'org-config)
+(require 'popwin-config)
 (require 'helm-config)
 (require 'evil-config)
 (require 'omnisharp-config)
+(require 'msbuild-config)
 (require 'company-config)
 (require 'flycheck-config)
 (require 'projectile-config)
 (require 'yasnippet-config)
+(require 'dired-config)
+(require 'neotree-config)
 (require 'keybindings)
 
 ;; Diminish modes so they don't show up in the modeline
@@ -72,9 +78,3 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(org-agenda-files (quote ("~/.emacs.d/init.org"))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
