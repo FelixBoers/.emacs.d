@@ -7,5 +7,4 @@
 (global-evil-leader-mode)
 (evil-mode 1)
 
-
 (provide 'evil-config)
