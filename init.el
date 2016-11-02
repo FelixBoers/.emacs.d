@@ -1,6 +1,6 @@
 (if (equal system-name "CEWK1804")
 	(setq url-proxy-services
-	  '(("no_proxy" . "^\\(localhost\\|10.*\\)")
+		'(("no_proxy" . "^\\(localhost\\|10.*\\)")
 		("http" . "cegate40:8080")
 		("https" . "cegate40:8080"))))
 
@@ -14,32 +14,33 @@
 (package-initialize)
 
 (when (not package-archive-contents)
-  (package-refresh-contents))
+	(package-refresh-contents))
 
 (defvar my-packages '(
-  zenburn-theme		       ; one of the best low contract color themes
+	zenburn-theme			; one of the best low contract color themes
 
-  diminish			         ; don't clutter the modeline with minor mode names
-  smooth-scrolling	     ; avoids jumping to to middle of the page
-  helm				           ; incremental completion and selection narrowing framework
-  helm-projectile		     ; helm ui for projectile
-  evil				           ; evil is an (e)xtensive (v)(i) (l)ayer for emacs	.	It provides Vim features.
-  evil-leader			       ; port of vim's mapleader
-  org-evil			         ; evil extension for org mode
-  omnisharp			         ; Troll coworkers - use Emacs at work for csharp
-  flycheck			         ; On the fly syntax checking
-  company				         ; Modular in-buffer bompletion framework
-  projectile			       ; Project Integration Library
-  yasnippet			         ; A template system
-  ace-jump-mode		       ; Enables fast/direct cursor movement in current view
-	popwin				         ; Popup window manager
-	neotree				         ; a emacs plugin like NerdTree for Vim
-  relative-line-numbers  ; displays relative line numbers on the left margin
-  ))
+	diminish				; don't clutter the modeline with minor mode names
+	smooth-scrolling		; avoids jumping to to middle of the page
+	helm					; incremental completion and selection narrowing framework
+	helm-projectile			; helm ui for projectile
+	evil					; evil is an (e)xtensive (v)(i) (l)ayer for emacs  .	It provides Vim features.
+	evil-leader				; port of vim's mapleader
+	org-evil				; evil extension for org mode
+	omnisharp				; Troll coworkers - use Emacs at work for csharp
+	flycheck				; On the fly syntax checking
+	company					; Modular in-buffer bompletion framework
+	projectile				; Project Integration Library
+	yasnippet				; A template system
+	ace-jump-mode			; Enables fast/direct cursor movement in current view
+	popwin					; Popup window manager
+	neotree					; a emacs plugin like NerdTree for Vim
+	relative-line-numbers	; displays relative line numbers on the left margin
+	web-mode				; is an autonomous emacs major-mode for editing web templates
+	))
 
 (dolist (p my-packages)
-  (when (not (package-installed-p p))
-    (package-install p)))
+	(when (not (package-installed-p p))
+		(package-install p)))
 
 (add-to-list 'load-path "~/.emacs.d/config/")
 
@@ -57,21 +58,24 @@
 (require 'yasnippet-config)
 (require 'dired-config)
 (require 'neotree-config)
+(require 'webmode-config)
 (require 'keybindings)
 
 ;; Diminish modes so they don't show up in the modeline
 (require 'diminish)
 (when (require 'diminish nil 'noerror)
-  (eval-after-load "company"
-    '(diminish 'company-mode))
-  (eval-after-load "yasnippet"
-    '(diminish 'yas-minor-mode))
-  (eval-after-load "helm"
-    '(diminish 'helm-mode))
-  (eval-after-load "projectile"
-    '(diminish 'projectile-mode))
-  (eval-after-load "undo-tree"
-    '(diminish 'undo-tree-mode)))
+	(eval-after-load "company"
+		'(diminish 'company-mode))
+	(eval-after-load "yasnippet"
+		'(diminish 'yas-minor-mode))
+	(eval-after-load "helm"
+		'(diminish 'helm-mode))
+	(eval-after-load "projectile"
+		'(diminish 'projectile-mode))
+	(eval-after-load "undo-tree"
+		'(diminish 'undo-tree-mode))
+	(eval-after-load "auto-revert-mode"
+	'(diminish 'auto-revert-mode)))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

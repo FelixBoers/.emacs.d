@@ -11,6 +11,9 @@
 (smooth-scrolling-mode)
 (setq smooth-scroll-margin 5)
 
+;; Auto reload file
+(global-auto-revert-mode)
+
 ;; Backup control
 (setq backup-directory-alist `((".*" .,temporary-file-directory)))
 (setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
@@ -31,7 +34,7 @@
 (prefer-coding-system 'utf-8)
 
 ;; Shell
-(if (equal system-type "windows-nt")
+(if (equal system-type "windows-nit")
   (setq explicit-shell-file-name "C:/Program Files/Git/bin/bash.exe")
   (setq shell-file-name "C:/Program Files/Git/bin/bash.exe")
   (setq explicit-bash.exe-args '("--noediting" "--login" "-i"))
