@@ -12,7 +12,4 @@
 ;; Theme
 (load-theme 'zenburn t)
 
-;; Relative line numbers
-(global-relative-line-numbers-mode)
-
 (provide 'ui-config)

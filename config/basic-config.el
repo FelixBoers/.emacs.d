@@ -3,6 +3,11 @@
     inhibit-startup-message t
     inhibit-startup-echo-area-message t)
 
+(require 'linum-relative)
+(global-linum-mode)
+(linum-relative-mode)
+(setq linum-relative-current-symbol "")
+
 ;; Tabbing
 (setq tab-width 4)
 (setq-default tab-width 4)
@@ -43,5 +48,14 @@
 
 ;; No more typing the whole yes or no. Just y or n will do.
 (fset 'yes-or-no-p 'y-or-n-p)
+
+;; Jumping
+(autoload
+  'ace-jump-mode-pop-mark
+  "ace-jump-mode"
+  "Ace jump bacl :-)"
+  t)
+(eval-after-load "ace-jump-mode"
+  '(ace-jump-mode-enable-mark-sync))
 
 (provide 'basic-config)

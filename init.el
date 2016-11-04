@@ -6,9 +6,10 @@
 
 (require 'package)
 
+
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
-(add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
+(add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 
 (setq package-enable-at-startup nil)
 (package-initialize)
@@ -17,24 +18,25 @@
   (package-refresh-contents))
 
 (defvar my-packages '(
-  zenburn-theme		    ; one of the best low contract color themes
+  zenburn-theme		; one of the best low contract color themes
 
-  diminish			    ; don't clutter the modeline with minor mode names
-  smooth-scrolling	    ; avoids jumping to to middle of the page
-  helm				    ; incremental completion and selection narrowing framework
-  helm-projectile		; helm ui for projectile
-  evil				    ; evil is an (e)xtensive (v)(i) (l)ayer for emacs	.	It provides Vim features.
-  evil-leader			; port of vim's mapleader
-  org-evil			    ; evil extension for org mode
-  omnisharp			    ; Troll coworkers - use Emacs at work for csharp
-  flycheck			    ; On the fly syntax checking
-  company				; Modular in-buffer bompletion framework
-  projectile			; Project Integration Library
-  yasnippet			    ; A template system
-  ace-jump-mode		    ; Enables fast/direct cursor movement in current view
-  popwin				; Popup window manager
-  neotree				; a emacs plugin like NerdTree for Vim
-  relative-line-numbers ; displays relative line numbers on the left margin
+  diminish			; don't clutter the modeline with minor mode names
+  smooth-scrolling	; avoids jumping to to middle of the page
+  helm				; incremental completion and selection narrowing framework
+  helm-projectile	; helm ui for projectile
+  evil				; evil is an (e)xtensive (v)(i) (l)ayer for emacs	.	It provides Vim features.
+  evil-leader		; port of vim's mapleader
+  org-evil			; evil extension for org mode
+  omnisharp			; Troll coworkers - use Emacs at work for csharp
+  flycheck			; On the fly syntax checking
+  company			; Modular in-buffer bompletion framework
+  projectile		; Project Integration Library
+  yasnippet			; A template system
+  ace-jump-mode		; Enables fast/direct cursor movement in current view
+  popwin			; Popup window manager
+  neotree			; a emacs plugin like NerdTree for Vim
+  linum-relative	; display relative line number in the left margin
+  magit				; a git porcelain inside emacs
   ))
 
 (dolist (p my-packages)
@@ -45,10 +47,10 @@
 
 (require 'basic-config)
 (require 'ui-config)
+(require 'evil-config)
 (require 'org-config)
 (require 'popwin-config)
 (require 'helm-config)
-(require 'evil-config)
 (require 'omnisharp-config)
 (require 'msbuild-config)
 (require 'company-config)
@@ -57,6 +59,7 @@
 (require 'yasnippet-config)
 (require 'dired-config)
 (require 'neotree-config)
+(require 'magit-config)
 (require 'keybindings)
 
 ;; Diminish modes so they don't show up in the modeline
@@ -73,12 +76,12 @@
   (eval-after-load "undo-tree"
     '(diminish 'undo-tree-mode)))
 
-;; Open agenda
-(org-agenda nil "a")
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(org-agenda-files '("~/org")))
+
+;; Open agenda
+(org-agenda nil "c")
