@@ -17,24 +17,24 @@
   (package-refresh-contents))
 
 (defvar my-packages '(
-  zenburn-theme		       ; one of the best low contract color themes
+  zenburn-theme		    ; one of the best low contract color themes
 
-  diminish			         ; don't clutter the modeline with minor mode names
-  smooth-scrolling	     ; avoids jumping to to middle of the page
-  helm				           ; incremental completion and selection narrowing framework
-  helm-projectile		     ; helm ui for projectile
-  evil				           ; evil is an (e)xtensive (v)(i) (l)ayer for emacs	.	It provides Vim features.
-  evil-leader			       ; port of vim's mapleader
-  org-evil			         ; evil extension for org mode
-  omnisharp			         ; Troll coworkers - use Emacs at work for csharp
-  flycheck			         ; On the fly syntax checking
-  company				         ; Modular in-buffer bompletion framework
-  projectile			       ; Project Integration Library
-  yasnippet			         ; A template system
-  ace-jump-mode		       ; Enables fast/direct cursor movement in current view
-	popwin				         ; Popup window manager
-	neotree				         ; a emacs plugin like NerdTree for Vim
-  relative-line-numbers  ; displays relative line numbers on the left margin
+  diminish			    ; don't clutter the modeline with minor mode names
+  smooth-scrolling	    ; avoids jumping to to middle of the page
+  helm				    ; incremental completion and selection narrowing framework
+  helm-projectile		; helm ui for projectile
+  evil				    ; evil is an (e)xtensive (v)(i) (l)ayer for emacs	.	It provides Vim features.
+  evil-leader			; port of vim's mapleader
+  org-evil			    ; evil extension for org mode
+  omnisharp			    ; Troll coworkers - use Emacs at work for csharp
+  flycheck			    ; On the fly syntax checking
+  company				; Modular in-buffer bompletion framework
+  projectile			; Project Integration Library
+  yasnippet			    ; A template system
+  ace-jump-mode		    ; Enables fast/direct cursor movement in current view
+  popwin				; Popup window manager
+  neotree				; a emacs plugin like NerdTree for Vim
+  relative-line-numbers ; displays relative line numbers on the left margin
   ))
 
 (dolist (p my-packages)
@@ -73,10 +73,12 @@
   (eval-after-load "undo-tree"
     '(diminish 'undo-tree-mode)))
 
+;; Open agenda
+(org-agenda nil "a")
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(org-agenda-files '("~/org"))
- )
+ '(org-agenda-files '("~/org")))
