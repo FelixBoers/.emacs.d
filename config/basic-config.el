@@ -1,3 +1,17 @@
+;; Font
+(set-frame-font "DejaVu Sans Mono 11")
+
+;; Disable scroll/menu/tool bar
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
+
+;; Show matching pairs of parentheses
+(show-paren-mode 1)
+
+;; Basic keybindings
+(define-key global-map (kbd "C-c u") 'insert-char) ;; "u" for Unicode
+
 ;; Disable startup message
 (setq inhibit-splash-screen t
     inhibit-startup-message t
@@ -32,7 +46,7 @@
 (delete-backups-older-than-one-week)
 
 ;; Mics
-(setq visible-bell 1)
+(setq visible-bell nil)
 (prefer-coding-system 'utf-8)
 
 ;; Shell
@@ -57,5 +71,7 @@
   t)
 (eval-after-load "ace-jump-mode"
   '(ace-jump-mode-enable-mark-sync))
+
+(load-theme 'jazz t)
 
 (provide 'basic-config)

@@ -41,7 +41,7 @@
   "y" 'yank-to-x-clipboard
   "q" 'kill-buffer-and-window
   "e" 'find-file
-  "aa" 'align-regexp
+  "ar" 'align-regexp
   "a" 'org-custom-agenda
   "g" 'magit-status)
 
@@ -53,8 +53,11 @@
 (define-key evil-normal-state-map (kbd "g/") 'occur-last-search)
 (define-key evil-normal-state-map (kbd "gf") 'ace-jump-mode)
 
-(evil-define-key 'normal global-map (kbd "C-p") 'helm-projectile)
-(evil-define-key 'normal global-map (kbd "C-S-p") 'helm-projectile-switch-project)
+(evil-define-key 'normal global-map
+  (kbd "C-p") 'helm-projectile
+  (kbd "C-S-p") 'helm-projectile-switch-project
+  (kbd "<down>") 'evil-next-visual-line
+  (kbd "<up>") 'evil-previous-visual-line)
 
 ;; Make escape quit everything, whenever possible.
 (defun minibuffer-keyboard-quit()
@@ -75,23 +78,35 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (define-key minibuffer-local-must-match-map [escape] 'minibuffer-keyboard-quit)
 (define-key minibuffer-local-isearch-map [escape] 'minibuffer-keyboard-quit)
 
+
 ;; Dired
-(evil-define-key 'normal dired-mode-map "h" 'my-dired-up-directory)
-(evil-define-key 'normal dired-mode-map "l" 'dired-find-alternative-file)
-(evil-define-key 'normal dired-mode-map "o" 'dired-sort-toggle-or-edit)
-(evil-define-key 'normal dired-mode-map "v" 'dired-toggle-mask)
-(evil-define-key 'normal dired-mode-map "m" 'dired-mark)
-(evil-define-key 'normal dired-mode-map "u" 'dired-unmark)
-(evil-define-key 'normal dired-mode-map "U" 'dired-unmark-all-marks)
-(evil-define-key 'normal dired-mode-map "c" 'dired-create-directory)
-(evil-define-key 'normal dired-mode-map "n" 'evil-search-next)
-(evil-define-key 'normal dired-mode-map "N" 'evil-search-previous)
-(evil-define-key 'normal dired-mode-map "q" 'kill-this-buffer)
+(evil-define-key 'normal dired-mode-map
+  "h" 'my-dired-up-directory
+  "l" 'dired-find-alternative-file
+  "o" 'dired-sort-toggle-or-edit
+  "v" 'dired-toggle-mask
+  "m" 'dired-mark
+  "u" 'dired-unmark
+  "U" 'dired-unmark-all-marks
+  "c" 'dired-create-directory
+  "n" 'evil-search-next
+  "N" 'evil-search-previous
+  "q" 'kill-this-buffer)
 
 ;; NeoTree
-(evil-define-key 'normal neotree-mode-map (kbd "TAB") 'neotree-enter)
-(evil-define-key 'normal neotree-mode-map (kbd "SPC") 'neotree-enter)
-(evil-define-key 'normal neotree-mode-map (kbd "q") 'neotree-hide)
-(evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)
+(evil-define-key 'normal neotree-mode-map
+  (kbd "TAB") 'neotree-enter
+  (kbd "SPC") 'neotree-enter
+  (kbd "q") 'neotree-hide
+  (kbd "RET") 'neotree-enter)
+
+;; Org
+(evil-define-key 'normal org-mode-map
+  "H" 'org-shiftleft
+  "J" 'org-shiftdown
+  "K" 'org-shiftup
+  "L" 'org-shiftright
+  "-" 'org-cycle-list-bullet
+  (kbd "<tab>") 'org-cycle)
 
 (provide 'evil-config)

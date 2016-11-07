@@ -1,9 +1,9 @@
 (require 'helm)
 
-
 (setq helm-autoresize-max-height 0)
 (setq helm-autoresize-min-height 20)
 (setq helm-autoresize-mode 1)
+(setq helm-split-window-in-side-p t)
 (helm-mode 1)
 
 (require 'helm-projectile)
