@@ -1,4 +1,11 @@
+;;; basic-config.el -- Basic configurations
+										;-*-Emacs-Lisp-*-
+;;; Commentary:
+;;
+;;; Code:
+
 ;; Font
+(require 'frame)
 (set-frame-font "DejaVu Sans Mono 11")
 
 ;; Disable scroll/menu/tool bar
@@ -50,10 +57,11 @@
 (prefer-coding-system 'utf-8)
 
 ;; Shell
+(require 'shell)
 (if (equal system-type "windows-nt")
   (setq explicit-shell-file-name "C:/Program Files/Git/bin/bash.exe")
   (setq shell-file-name "C:/Program Files/Git/bin/bash.exe")
-  (setq explicit-bash.exe-args '("--noediting" "--login" "-i"))
+  (defvar explicit-bash.exe-args '("--noediting" "--login" "-i"))
   (add-to-list 'exec-path "C:/Program Files/Git/bin")
   (setenv "SHELL" shell-file-name)
   (add-hook 'comint-output-filter-functions 'comint-strip-ctrl-m))
@@ -75,3 +83,4 @@
 (load-theme 'jazz t)
 
 (provide 'basic-config)
+;;; basic-config.el ends here

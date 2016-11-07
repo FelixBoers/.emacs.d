@@ -1,4 +1,11 @@
+;;; org-config.el -- OrgMode configuration
+; -*-Emacs-Lisp-*-
+;;; Commentary:
+;;
+;;; Code:
 (require 'org)
+
+(global-set-key (kbd "C-c a") 'org-agenda)
 
 (setq org-hide-leading-stars t)
 (setq org-log-done 'time)
@@ -39,7 +46,7 @@ PRIORITY may be one o fthe charaters ?A, ?B or ?C."
 		subtree-end
 	  nil)))
 
-(setq org-agenda-custom-commands
+(defvar org-agenda-custom-commands
 	  '(("c" "Simple agenda view"
 		 ((tags "PRIORITY=\"A\""
 				((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
@@ -51,3 +58,4 @@ PRIORITY may be one o fthe charaters ?A, ?B or ?C."
 						  (org-agenda-skip-if nil '(scheduled deadline))))))))))
 
 (provide 'org-config)
+;;; org-config.el ends here

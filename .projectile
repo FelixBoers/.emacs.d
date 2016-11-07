@@ -1,0 +1,6 @@
+-/elpa
+-/server
+-/auto-save-list
+-*.cache
+-*.eld
+-recentf

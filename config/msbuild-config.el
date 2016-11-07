@@ -1,3 +1,8 @@
+;;; msbuild-config.el -- MsBuild configuration
+; -*-Emacs-Lisp-*-
+;;; Commentary:
+;; 
+;;; Code:
 (defun get-sln-path()
   (let ((location nil))
 	(dolist (dir (expand-directory default-directory))
@@ -5,11 +10,6 @@
 	  (when (not location)
 		(location)))
 	location))
-
-(defun msbuild-sln()
-  (interactive)
-  (let sln (get-sln-path))
-  )
 
 (defun expand-directory(dir)
   (let ((previous nil) (current) (result))
@@ -22,3 +22,4 @@
 	result))
 
 (provide 'msbuild-config)
+;;; msbuild-config.el ends here

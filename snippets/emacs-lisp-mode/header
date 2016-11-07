@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: header
+# key: header
+# --
+;;; ${1:`(file-name-nondirectory (buffer-file-name))`} -- $2
+; -*-Emacs-Lisp-*-
+;;; Commentary:
+;; $3
+;;; Code:
+$0

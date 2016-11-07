@@ -1,3 +1,11 @@
+;;; init.el -- My emacs configuration
+										;-*-Emacs-Lisp-*-
+;;; Commentary:
+;;
+;;; Code:
+
+(require 'url-vars)
+
 (if (equal system-name "CEWK1804")
 	(setq url-proxy-services
 	  '(("no_proxy" . "^\\(localhost\\|10.*\\)")
@@ -43,7 +51,7 @@
   (when (not (package-installed-p p))
     (package-install p)))
 
-(add-to-list 'load-path "~/.emacs.d/config/")
+(add-to-list 'load-path (expand-file-name "config" user-emacs-directory))
 
 ;; Don't litter my init file
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
@@ -63,7 +71,6 @@
 (require 'dired-config)
 (require 'neotree-config)
 (require 'magit-config)
-(require 'keybindings)
 
 ;; Diminish modes so they don't show up in the modeline
 (require 'diminish)
@@ -78,7 +85,4 @@
     '(diminish 'projectile-mode))
   (eval-after-load "undo-tree"
     '(diminish 'undo-tree-mode)))
-
-;; Local Variables:
-;; flycheck-disable-checkers: (emacs-lisp-checkdoc)
-;; End:
+;;; init.el ends here

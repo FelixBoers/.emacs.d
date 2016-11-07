@@ -1,3 +1,9 @@
+;;; evil-config.el -- Evil-Mode configuration
+										; -*-Emacs-Lisp-*-
+;;; Commentary:
+;;
+;;; Code:
+(require 'evil-vars)
 (setq evil-want-C-u-scroll t)
 
 (require 'evil)
@@ -69,7 +75,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 	  (setq deactivate-mark t)
 	(when (get-buffer "*Completions*") (delete-windows-on "*Completions*"))
 	(abort-recursive-edit)))
-		   
+
 (define-key evil-normal-state-map [escape] 'keyboard-quit)
 (define-key evil-visual-state-map [escape] 'keyboard-quit)
 (define-key minibuffer-local-map [escape] 'minibuffer-keyboard-quit)
@@ -110,3 +116,4 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (kbd "<tab>") 'org-cycle)
 
 (provide 'evil-config)
+;;; evil-config.el ends here
