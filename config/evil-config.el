@@ -7,8 +7,10 @@
 (setq evil-want-C-u-scroll t)
 
 (require 'evil)
-(require 'evil-leader)
 (require 'org-evil)
+
+(require 'evil-surround)
+(global-evil-surround-mode 1)
 
 (defun occur-last-search()
   "Run `occur` with the last evil search serm."
@@ -24,6 +26,7 @@
   (interactive)
   (org-agenda nil "c"))
 
+(require 'evil-leader)
 (global-evil-leader-mode)
 (evil-mode 1)
 
@@ -47,9 +50,16 @@
   "y" 'yank-to-x-clipboard
   "q" 'kill-buffer-and-window
   "e" 'find-file
-  "ar" 'align-regexp
+  ;;"ar" 'align-regexp
   "a" 'org-custom-agenda
-  "g" 'magit-status)
+  "g" 'magit-status
+  "ci" 'evilnc-comment-or-uncomment-lines
+  "cl" 'evilnc-quick-comment-or-uncomment-to-the-line
+  "ll" 'evilnc-quick-comment-or-uncomment-to-the-line
+  "cc" 'evilnc-copy-and-comment-lines
+  "cp" 'evilnc-comment-or-uncomment-paragraphs
+  "cr" 'evilnc-comment-or-uncomment-region
+  "cv" 'evilnc-toggle-invert-comment-line-by-line)
 
 (define-key evil-normal-state-map (kbd "M-h") 'evil-window-left)
 (define-key evil-normal-state-map (kbd "M-j") 'evil-window-down)

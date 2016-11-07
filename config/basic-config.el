@@ -13,8 +13,12 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
-;; Show matching pairs of parentheses
-(show-paren-mode 1)
+;; Match delimiters such as brackets parentheses or braces
+(show-paren-mode 0)
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+
+;; Git-Gutter
+(global-git-gutter-mode +1)
 
 ;; Basic keybindings
 (define-key global-map (kbd "C-c u") 'insert-char) ;; "u" for Unicode

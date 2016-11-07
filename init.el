@@ -25,26 +25,30 @@
   (package-refresh-contents))
 
 (defvar my-packages '(
-  zenburn-theme		; one of the best low contract color themes
+  zenburn-theme			; one of the best low contract color themes
   jazz-theme
 
-  diminish			; don't clutter the modeline with minor mode names
-  smooth-scrolling	; avoids jumping to to middle of the page
-  helm				; incremental completion and selection narrowing framework
-  helm-projectile	; helm ui for projectile
-  evil				; evil is an (e)xtensive (v)(i) (l)ayer for emacs	.	It provides Vim features.
-  evil-leader		; port of vim's mapleader
-  org-evil			; evil extension for org mode
-  omnisharp			; Troll coworkers - use Emacs at work for csharp
-  flycheck			; On the fly syntax checking
-  company			; Modular in-buffer bompletion framework
-  projectile		; Project Integration Library
-  yasnippet			; A template system
-  ace-jump-mode		; Enables fast/direct cursor movement in current view
-  popwin			; Popup window manager
-  neotree			; a emacs plugin like NerdTree for Vim
-  linum-relative	; display relative line number in the left margin
-  magit				; a git porcelain inside emacs
+  ace-jump-mode			; Enables fast/direct cursor movement in current view
+  company				; Modular in-buffer bompletion framework
+  diminish				; don't clutter the modeline with minor mode names
+  evil					; evil is an (e)xtensive (v)(i) (l)ayer for emacs	.	It provides Vim features.
+  evil-leader			; port of vim's mapleader
+  evil-nerd-commenter	; helps to comment code efficently
+  evil-surround			; you will be surrounded (surround.vim for evil)
+  flycheck				; On the fly syntax checking
+  git-gutter			; Show an icon in the gutter area indicating whether a line has been inserted, modified or deleted.
+  helm					; incremental completion and selection narrowing framework
+  helm-projectile		; helm ui for projectile
+  linum-relative		; display relative line number in the left margin
+  magit					; a git porcelain inside emacs
+  neotree				; a emacs plugin like NerdTree for Vim
+  omnisharp				; Troll coworkers - use Emacs at work for csharp
+  org-evil				; evil extension for org mode
+  popwin				; Popup window manager
+  projectile			; Project Integration Library
+  rainbow-delimiters	; Highlighting delimiters in different colors according to their depth
+  smooth-scrolling		; avoids jumping to to middle of the page
+  yasnippet				; A template system
   ))
 
 (dolist (p my-packages)
@@ -84,5 +88,7 @@
   (eval-after-load "projectile"
     '(diminish 'projectile-mode))
   (eval-after-load "undo-tree"
-    '(diminish 'undo-tree-mode)))
+    '(diminish 'undo-tree-mode))
+  (eval-after-load "git-gutter"
+	'(diminish 'git-gutter-mode)))
 ;;; init.el ends here
