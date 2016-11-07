@@ -58,6 +58,10 @@
 
 ;; Mics
 (setq visible-bell nil)
+(setq ring-bell-function
+	  '(lambda()
+		 (invert-face 'mode-line)
+		 (run-with-timer 0.1 nil 'invert-face 'mode-line)))
 (prefer-coding-system 'utf-8)
 
 ;; Shell
