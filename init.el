@@ -47,6 +47,7 @@
 
 ;; Don't litter my init file
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(load custom-file 'noerror)
 
 (require 'basic-config)
 (require 'evil-config)
