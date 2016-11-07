@@ -14,6 +14,10 @@
 		(occur term)
 	  (message "No term to search for."))))
 
+(defun org-custom-agenda()
+  (interactive)
+  (org-agenda nil "c"))
+
 (global-evil-leader-mode)
 (evil-mode 1)
 
@@ -38,6 +42,7 @@
   "q" 'kill-buffer-and-window
   "e" 'find-file
   "aa" 'align-regexp
+  "a" 'org-custom-agenda
   "g" 'magit-status)
 
 (define-key evil-normal-state-map (kbd "M-h") 'evil-window-left)
