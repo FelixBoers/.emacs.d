@@ -41,13 +41,16 @@
   helm-projectile		; helm ui for projectile
   linum-relative		; display relative line number in the left margin
   magit					; a git porcelain inside emacs
+  markdown-mode
   neotree				; a emacs plugin like NerdTree for Vim
   omnisharp				; Troll coworkers - use Emacs at work for csharp
   org-evil				; evil extension for org mode
   popwin				; Popup window manager
   projectile			; Project Integration Library
   rainbow-delimiters	; Highlighting delimiters in different colors according to their depth
+  scss-mode
   smooth-scrolling		; avoids jumping to to middle of the page
+  yaml-mode
   yasnippet				; A template system
   ))
 

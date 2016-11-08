@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: blog
+# key: blog
+# --
+---
+layout: post
+title:  "${1:Title}"
+date:   `(format-time-string "%Y-%m-%d %H:%M:%S %z" (current-time))`
+categories: $2
+---
+$0

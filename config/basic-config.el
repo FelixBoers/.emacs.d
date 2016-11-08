@@ -20,6 +20,15 @@
 ;; Git-Gutter
 (global-git-gutter-mode +1)
 
+;; Yaml Mode
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
+
+;; Scss Mode
+(require 'scss-mode)
+(autoload 'scss-mode "scss-mode")
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
+
 ;; Basic keybindings
 (define-key global-map (kbd "C-c u") 'insert-char) ;; "u" for Unicode
 
