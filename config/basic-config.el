@@ -37,8 +37,14 @@
     inhibit-startup-message t
     inhibit-startup-echo-area-message t)
 
-(require 'linum)
-(global-linum-mode)
+;; Line numbering
+(require 'linum-relative)
+(linum-relative-global-mode)
+
+;; Display Date/Time in status bar
+(setq display-time-day-and-date t)
+(defvar display-time-24hr-format t)
+(display-time)
 
 ;; Tabbing
 (setq tab-width 4)
@@ -95,6 +101,15 @@
 (eval-after-load "ace-jump-mode"
   '(ace-jump-mode-enable-mark-sync))
 
+;; Hide ^M (carriage return) in text buffers
+(defun remove-dos-eol ()
+  "Do not show ^M in files containing mixed UNIX and DOS line endings."
+  (interactive)
+  (setq buffer-display-table (make-display-table))
+  (aset buffer-display-table ?\^M []))
+(add-hook 'text-mode-hook 'remove-dos-eol)
+
+;; Theme
 (load-theme 'jazz t)
 
 (provide 'basic-config)
