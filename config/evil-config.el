@@ -61,6 +61,27 @@
   "cr" 'evilnc-comment-or-uncomment-region
   "cv" 'evilnc-toggle-invert-comment-line-by-line)
 
+(add-hook 'omnisharp-mode-hook
+  '(lambda()
+	 (evil-leader/set-key
+	   "fu" 'omnisharp-helm-find-usages
+	   "fi" 'omnisharp-find-implementations
+	   "fd" 'omnisharp-go-to-definition
+	   "fa" 'omnisharp-navigate-to-solution-file-then-file-member
+	   "fm" 'omnisharp-navigate-to-current-file-member
+	   "rn" 'omnisharp-rename-interactively
+	   "fs" 'omnisharp-helm-find-symbols
+	   "fxu" 'omnisharp-fix-usings
+	   "fxi" 'omnisharp-fix-code-issue-at-point)))
+;; (evil-leader/set-key-for-mode 'omnisharp-mode
+;;   "fu" 'omnisharp-helm-find-usages
+;;   "fi" 'omnisharp-find-implementations
+;;   "fd" 'omnisharp-go-to-definition
+;;   "fm" 'omnisharp-navigate-to-solution-file-then-file-member
+;;   "rn" 'omnisharp-rename-interactively
+;;   "fxu" 'omnisharp-fix-usings
+;;   "fxi" 'omnisharp-fix-code-issue-at-point)
+
 (define-key evil-normal-state-map (kbd "M-h") 'evil-window-left)
 (define-key evil-normal-state-map (kbd "M-j") 'evil-window-down)
 (define-key evil-normal-state-map (kbd "M-k") 'evil-window-up)

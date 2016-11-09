@@ -37,10 +37,8 @@
     inhibit-startup-message t
     inhibit-startup-echo-area-message t)
 
-(require 'linum-relative)
+(require 'linum)
 (global-linum-mode)
-(linum-relative-mode)
-(setq linum-relative-current-symbol "")
 
 ;; Tabbing
 (setq tab-width 4)

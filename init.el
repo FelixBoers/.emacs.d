@@ -31,10 +31,12 @@
   ace-jump-mode			; Enables fast/direct cursor movement in current view
   company				; Modular in-buffer bompletion framework
   diminish				; don't clutter the modeline with minor mode names
+  omnisharp				; Troll coworkers - use Emacs at work for csharp
   evil					; evil is an (e)xtensive (v)(i) (l)ayer for emacs	.	It provides Vim features.
   evil-leader			; port of vim's mapleader
   evil-nerd-commenter	; helps to comment code efficently
   evil-surround			; you will be surrounded (surround.vim for evil)
+  org-evil				; evil extension for org mode
   flycheck				; On the fly syntax checking
   git-gutter			; Show an icon in the gutter area indicating whether a line has been inserted, modified or deleted.
   helm					; incremental completion and selection narrowing framework
@@ -43,8 +45,6 @@
   magit					; a git porcelain inside emacs
   markdown-mode
   neotree				; a emacs plugin like NerdTree for Vim
-  omnisharp				; Troll coworkers - use Emacs at work for csharp
-  org-evil				; evil extension for org mode
   popwin				; Popup window manager
   projectile			; Project Integration Library
   rainbow-delimiters	; Highlighting delimiters in different colors according to their depth
