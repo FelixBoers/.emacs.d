@@ -7,7 +7,7 @@
 (setq evil-want-C-u-scroll t)
 
 (require 'evil)
-(require 'org-evil)
+(require 'evil-org)
 
 (require 'evil-surround)
 (global-evil-surround-mode 1)

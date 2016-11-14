@@ -10,8 +10,8 @@
 
 (add-hook 'csharp-mode-hook
 		  (lambda ()
-			(set (make-local-variable 'compile-command) "MsBuild.exe")
-			(flymake-mode)))
+			(set (make-local-variable 'compile-command) "MsBuild.exe")))
+			;;; (flymake-mode)))
 
 (provide 'omnisharp-config)
 ;;; omnisharp-config.el ends here

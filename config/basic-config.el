@@ -38,8 +38,9 @@
     inhibit-startup-echo-area-message t)
 
 ;; Line numbering
-(require 'linum-relative)
-(linum-relative-global-mode)
+(require 'relative-line-numbers)
+(global-relative-line-numbers-mode)
+(setq relative-line-numbers-motion-function #'forward-visible-line)
 
 ;; Display Date/Time in status bar
 (setq display-time-day-and-date t)

@@ -28,6 +28,7 @@
   zenburn-theme			; one of the best low contract color themes
   jazz-theme
 
+  org
   ace-jump-mode			; Enables fast/direct cursor movement in current view
   company				; Modular in-buffer bompletion framework
   diminish				; don't clutter the modeline with minor mode names
@@ -36,12 +37,12 @@
   evil-leader			; port of vim's mapleader
   evil-nerd-commenter	; helps to comment code efficently
   evil-surround			; you will be surrounded (surround.vim for evil)
-  org-evil				; evil extension for org mode
+  evil-org			; Supplemental evil-mode keybindings to emacs org-mode
   flycheck				; On the fly syntax checking
   git-gutter			; Show an icon in the gutter area indicating whether a line has been inserted, modified or deleted.
   helm					; incremental completion and selection narrowing framework
   helm-projectile		; helm ui for projectile
-  linum-relative		; display relative line number in the left margin
+  relative-line-numbers ; Relative line numbering for emacs
   magit					; a git porcelain inside emacs
   markdown-mode
   neotree				; a emacs plugin like NerdTree for Vim
