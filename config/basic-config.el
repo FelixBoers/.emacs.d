@@ -53,7 +53,7 @@
 
 ;; Scrolling
 (smooth-scrolling-mode)
-(setq smooth-scroll-margin 5)
+(setq smooth-scroll-margin 1)
 
 ;; Backup control
 (setq backup-directory-alist `((".*" .,temporary-file-directory)))
